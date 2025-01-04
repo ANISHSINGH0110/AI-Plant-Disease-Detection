@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Detection</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+  <header>
+    <h1>Plant Disease Detection</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="#upload">Upload Image</a>
+        <a href="contact.html" target="_blank">Contact</a>
+        <a href="login.html" target="_blank">Login</a>    <!-- Link to login page -->
+        <a href="signup.html" target="_blank">SignUp</a>  <!-- Link to SignUp page -->
+        <a href="voice.html" target="_blank">Voice Search</a>   <!-- Link to voice search page -->
+    </nav>
+</header>
+
+  <div class="container">
+    <!-- Intro Section -->
+    <div class="section image-bg">
+      <h2>About Plant Disease Detection</h2>
+      <!-- <img src="about.webp" alt="About"> -->
+      <p>
+        Identifying plant diseases early is crucial for maintaining healthy crops and ensuring food security. 
+        Our platform uses advanced AI to detect diseases from images of plants, providing accurate results and suggestions for treatment.
+      </p>
+    </div>
+
+    <section id="features">
+        <h2>Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Accurate Detection</h3>
+                <p>Identify diseases with high accuracy using AI-based models.</p>
+            </div>
+            <div class="feature">
+                <h3>Expert Recommendations</h3>
+                <p>Receive suggestions for effective treatments and care.</p>
+            </div>
+            <div class="feature">
+                <h3>Easy to Use</h3>
+                <p>Simply upload a photo of your plant, and we’ll do the rest!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="upload" class="upload-section">
+        <h2>Upload an Image</h2>
+        <p>Submit a clear image of the affected plant to analyze its condition.</p>
+        <form class="upload-form" action="upload.php" method="POST" enctype="multipart/form-data">
+            <label for="plant-image">Choose Image:</label>
+            <input type="file" id="plant-image" name="plant-image" accept="image/*" required>
+            <input type="submit" value="Upload">
+        </form>
+    </section>
+
+
+    <!-- Image Gallery -->
+    <div class="section">
+      <h2>Sample Plant Images</h2>
+      <div class="gallery">
+        <div class="card">
+          <img src="healthy.jpg" alt="Healthy Plant">
+          <h4>Healthy Plant</h4>
+        </div>
+        <div class="card">
+          <img src="diseased.jpg" alt="Diseased Plant">
+          <h4>Diseased Plant</h4>
+        </div>
+        <div class="card">
+          <img src="LeafSpot.jpg" alt="Leaf Spot">
+          <h4>Leaf Spot Disease</h4>
+        </div>
+      </div>
+    </div>
+
+<footer id="contact">
+    <p>© 2024 Plant Disease Detection. All rights reserved.</p>
+</footer>
+</body>
+</html>

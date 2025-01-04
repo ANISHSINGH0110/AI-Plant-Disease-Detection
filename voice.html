@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection - Voice Input</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom, #4caf50, #81c784);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.4);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            color: #fff;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #e0f7fa;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .voice-container {
+            background: #ffffff;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            text-align: center;
+            width: 90%;
+            max-width: 450px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #4caf50;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(45deg, #4caf50, #2e7d32);
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #66bb6a, #388e3c);
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        button i {
+            font-size: 1.2rem;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: #333;
+            font-weight: bold;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 1rem;
+            color: #e0f7fa;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e0f7fa;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <!-- Add Font Awesome for the Microphone Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Plant Disease Detection</h1>
+        <p>Use your voice to identify plant diseases</p>
+    </header>
+    <main>
+        <div class="voice-container">
+            <h2>Speak the Plant Disease</h2>
+            <p>Press the button below and describe the plant symptoms.</p>
+            <button id="voiceButton" onclick="startRecognition()">
+                <i class="fas fa-microphone"></i>
+                Start Voice Input
+            </button>
+            <p id="output">Awaiting your voice...</p>
+        </div>
+    </main>
+    <footer>
+        &copy; 2024 Plant Detection </a>
+    </footer>
+    <script>
+        const output = document.getElementById('output');
+        const button = document.getElementById('voiceButton');
+
+        // Check if the browser supports Speech Recognition
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const recognition = new SpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            // Start recognition
+            function startRecognition() {
+                output.textContent = 'Listening...';
+                recognition.start();
+            }
+
+            recognition.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                output.textContent = You said: "${transcript}";
+                // Add logic here to process the voice input
+            };
+
+            recognition.onerror = (event) => {
+                output.textContent = Error: ${event.error};
+            };
+
+            recognition.onend = () => {
+                output.textContent += ' (Listening stopped)';
+            };
+        } else {
+            output.textContent = 'Sorry, your browser does not support voice recognition.';
+            button.disabled = true;
+        }
+    </script>
+</body>
+</html>
