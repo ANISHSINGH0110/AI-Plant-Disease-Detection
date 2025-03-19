@@ -56,6 +56,7 @@ Confidence level (accuracy of the prediction).
 
 
 ## Disease Prediction
+![Disease Prediction](Disease_Prediction.png)
 
 ## 🔮 Future Enhancements
 
