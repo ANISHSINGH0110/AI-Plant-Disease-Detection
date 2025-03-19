@@ -47,6 +47,7 @@ The detected disease.
 Confidence level (accuracy of the prediction).
 
 ## Accuracy Visualization
+![AI Plant Disease Detection](Accuracy Visualization.png)
 
 
 
