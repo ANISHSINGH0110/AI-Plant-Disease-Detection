@@ -52,7 +52,7 @@ Confidence level (accuracy of the prediction).
 
 
 ## Test Image
-
+![Test Image](Test_Image.png)
 
 
 ## Disease Prediction
