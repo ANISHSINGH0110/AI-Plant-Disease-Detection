@@ -1,8 +1,8 @@
 # AI Plant Disease Detection 🌿🤖
-# Overview
+## Overview
 AI Plant Disease Detection is an intelligent tool powered by machine learning to identify plant diseases from images. It's designed to help farmers, researchers, and agricultural organizations detect diseases at early stages, enhance crop management, and reduce agricultural losses.
 
-# 🚀 Features
+## 🚀 Features
 
 Automated Image Analysis: Detect diseases directly from leaf images.
 
@@ -11,7 +11,7 @@ High Accuracy: Trained with a vast dataset to ensure precise disease classificat
 User-Friendly Interface: A simple input/output system to make it accessible to everyone.
 
 Scalable Solution: Can be adapted to support more crops and diseases as the model improves.
-# 🔧 Technologies Used
+## 🔧 Technologies Used
 
 Programming Language: Python 🐍
 
@@ -24,7 +24,7 @@ OpenCV, PIL for handling and processing images 🌄
 Dataset:
 Publicly available datasets like PlantVillage or custom datasets 🌱
 
-# 🛠 How It Works
+## 🛠 How It Works
 
 Data Collection: Gathered images of healthy and diseased plant leaves.
 
@@ -36,7 +36,7 @@ Prediction: The trained model predicts the disease when fed a new leaf image.
 
 Output: Displays the disease name and the confidence level.
 
-# 💻 Usage
+## 💻 Usage
 
 Upload an Image: Drag and drop or browse your file to upload a plant leaf image.
 
@@ -46,7 +46,17 @@ The detected disease.
 
 Confidence level (accuracy of the prediction).
 
-# 🔮 Future Enhancements
+## Accuracy Visualization
+
+
+
+## Test Image
+
+
+
+## Disease Prediction
+
+## 🔮 Future Enhancements
 
 Mobile App Integration: Allow on-field usage with mobile apps for real-time detection 📱.
 
@@ -54,7 +64,7 @@ Expanded Dataset: Include more plant species and diseases for broader coverage �
 
 Real-Time Video Detection: Enable live video feeds for disease detection 🌟.
 
-# 📝 How to Contribute
+## 📝 How to Contribute
 
 We welcome contributions to make this project even better! You can help by:
 
@@ -78,7 +88,7 @@ Push to your branch (git push origin feature-branch) 🚀
 
 Open a Pull Request (PR) 🔃
 
-# 🌍 Acknowledgements
+## 🌍 Acknowledgements
 
 PlantVillage Dataset: A large public dataset for training models.
 
